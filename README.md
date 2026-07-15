@@ -1,8 +1,4 @@
----
-noteId: "61e9c460805d11f18685cb6d43a333a4"
-tags: []
 
----
 
 # Portfolio
 
