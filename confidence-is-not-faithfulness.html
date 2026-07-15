@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The correlation was 0.009 · Ajay Pravin Mahale</title>
+<meta name="description" content="Why a language model's confidence tells you nothing about whether its explanation is faithful.">
+<meta name="theme-color" content="#FDFDFC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--sans:"Geist",system-ui,-apple-system,sans-serif;--mono:"Geist Mono",ui-monospace,monospace;
+--bg:#FDFDFC;--text:#161616;--muted:#4B4B49;--faint:#9C9C98;--line:#E9E9E6;--line-strong:#CFCFCB;--accent:#0B5FFF;--grid:rgba(22,22,22,.045);}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background-color:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.72;
+-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;}
+.page{max-width:660px;margin:0 auto;padding:72px 24px 96px}
+.back{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:44px}
+.back:hover{color:var(--accent)}
+article h1{font-size:clamp(26px,4vw,36px);line-height:1.18;letter-spacing:-.02em;font-weight:600;margin-bottom:10px}
+article>p:first-of-type em{font-family:var(--mono);font-style:normal;font-size:13px;color:var(--faint);letter-spacing:.02em}
+article h2{font-size:19px;font-weight:600;letter-spacing:-.01em;margin:40px 0 14px}
+article p{margin-bottom:18px}
+article ul{margin:0 0 18px 0;padding-left:0;list-style:none}
+article li{padding:8px 0 8px 16px;border-left:2px solid var(--line-strong);margin-bottom:8px;color:var(--text)}
+article strong{font-weight:600}
+article em{font-style:italic}
+article a{color:var(--accent);text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:3px}
+article hr{border:none;border-top:1px solid var(--line);margin:40px 0 22px}
+article hr + p{font-family:var(--mono);font-size:12.5px;line-height:1.85;color:var(--muted)}
+article code{font-family:var(--mono);font-size:.88em;background:#F1F1EE;padding:1px 5px;border-radius:4px}
+.foot{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--faint);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.foot a{color:var(--muted);text-decoration:none} .foot a:hover{color:var(--accent)}
+::selection{background:var(--text);color:var(--bg)}
+</style>
+</head>
+<body>
+<main class="page">
+<a class="back" href="../index.html">&larr; Ajay Pravin Mahale</a>
+<article>
+<h1>The correlation was 0.009: why a model's confidence tells you nothing about its honesty</h1>
+<p><em>Ajay Pravin Mahale</em></p>
+<p>I went looking for a shortcut and found out it doesn't exist.</p>
+<p>The shortcut would have been convenient. If a language model's confidence in an answer tracked how faithful its explanation of that answer is, you could screen explanations cheaply. High-confidence output, trust the reasoning. Low-confidence output, look closer. No circuit analysis, no ablations, just read the number the model already gives you.</p>
+<p>So I measured it. On the IOI task in GPT-2 Small, across fifty prompts, I took the model's confidence in each answer and the comprehensiveness of the circuit-level explanation for that same answer, and I correlated them. The coefficient came back at <strong>0.009</strong>.</p>
+<p>That is not a weak relationship. It is the absence of one. Zero, with a rounding error.</p>
+<h2>What confidence and faithfulness actually are</h2>
+<p>It helps to be precise about the two things that turned out to be unrelated.</p>
+<p>Confidence is easy: the model's probability on the token it predicts. When GPT-2 answers an IOI prompt, it assigns some mass to the correct name, and that mass is its confidence. Nothing mysterious.</p>
+<p>Faithfulness is the hard one, and it's the reason this project existed. A faithful explanation is one that reflects the computation the model actually ran, not one that merely sounds right. I measured it with comprehensiveness: remove the heads the explanation points to, and see how much the prediction degrades. If the explanation names the parts that matter, removing them should hurt. If it doesn't, the explanation was decoration.</p>
+<p>Confidence is a property of the <em>output</em>. Faithfulness is a property of the <em>explanation of how the output was produced</em>. Writing it that way, it seems obvious they could come apart. But the intuition most people carry, myself included when I started, is that a model which is sure of itself must be running a clean, legible computation. That a confident answer is a well-understood answer. The data says no.</p>
+<h2>Splitting the prompts</h2>
+<p>The scatter plot is the honest version of the result, but the split is the memorable one.</p>
+<p>I divided the fifty prompts into high-confidence cases (the model above 70% on its answer) and lower-confidence cases (at or below 70%). If confidence carried any information about faithfulness, the two groups should have pulled apart on comprehensiveness. They didn't. The high-confidence prompts averaged 20.3% comprehensiveness. The lower-confidence ones averaged 23.2%.</p>
+<p>If anything the model was slightly <em>less</em> faithful when it was more confident, though I want to be careful: with numbers this close and a sample this small, that difference is noise, not a trend. The point isn't that confidence predicts faithfulness backwards. The point is that it doesn't predict it at all.</p>
+<h2>Why I trust the null</h2>
+<p>A result that says "these two things are unrelated" is easy to produce by accident. You can get r near zero from a broken pipeline, a bug in how you paired the values, or a measure that's too crude to see the signal. So the load-bearing question is whether the null is real or just my code being wrong.</p>
+<p>Two things make me believe it. First, the comprehensiveness measure was not crude here. It had range and structure across the prompts (mean 22%, standard deviation 17.3%), and it separated cleanly into low, mid, and high bands. A measure that spreads that widely and still shows no relationship to confidence is showing you a real independence, not a flat line from a dead sensor. Second, the finding is consistent with the rest of the thesis. In a separate experiment, dressing up explanations to be more fluent pushed their perceived quality from 60% to 99% while their measured faithfulness didn't move. Fluency fooled the reader; confidence fooled the same instinct one layer down. Two different surface signals, both disconnected from what the model was actually doing.</p>
+<h2>What it costs you if you ignore it</h2>
+<p>Here is the practical version. A lot of deployed systems lean on model confidence as a safety rail. Route the low-confidence cases to a human, let the high-confidence ones through, trust the model more when its probability is high. For deciding whether an <em>answer</em> is likely correct, that can be reasonable. For deciding whether the model's <em>explanation</em> of that answer can be trusted, this result says the rail isn't attached to anything.</p>
+<p>If you need to know why a model did what it did, and increasingly, under regulation like the EU AI Act, you are required to, the model's own confidence is not evidence. You have to open it up. That was the whole motivation for building the tooling that came out of this work: confidence is free and tells you nothing about faithfulness, so faithfulness has to be measured directly, by intervening on the network.</p>
+<p>I would have preferred the shortcut. It would have made everything downstream cheaper. But 0.009 is 0.009, and the useful thing a null result does is close a door so you stop pushing on it.</p>
+<hr />
+<p><em>Method notes: GPT-2 Small, IOI task, n = 50 prompts. Confidence is the model's probability on its predicted answer token. Faithfulness measured as ERASER comprehensiveness (DeYoung et al., 2020). Pearson correlation between confidence and comprehensiveness r = 0.009. High-confidence (above 70%) mean comprehensiveness 20.3% over 21 prompts; lower-confidence mean 23.2% over 29 prompts. Comprehensiveness mean 22.0%, std 17.3%. Scope is deliberately narrow; I make no claim these values transfer to larger models. Code in the <a href="https://github.com/designer-coderajay/Causally-Grounded-Mechanistic-Interpretability-for-LLMs-with-Faithful-Natural-Language-Explanations">thesis repo</a>.</em></p>
+</article>
+<div class="foot">
+<span>&copy; 2026 Ajay Pravin Mahale</span>
+<span><a href="../index.html">home</a> &nbsp;·&nbsp; <a href="https://github.com/designer-coderajay" target="_blank" rel="noopener">github</a> &nbsp;·&nbsp; <a href="../Ajay-Mahale-Resume.pdf" target="_blank" rel="noopener">résumé</a></span>
+</div>
+</main>
+</body>
+</html>
