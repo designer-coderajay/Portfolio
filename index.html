@@ -10,8 +10,8 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ajay Pravin Mahale | AI Researcher &amp; Engineer">
 <meta property="og:description" content="Founder of Glassbox AI. Mechanistic interpretability, LLM safety, faithfulness evaluation. glassbox on PyPI, preprint on arXiv.">
-<meta property="og:url" content="https://ajay-mahale.vercel.app/">
-<meta property="og:image" content="https://ajay-mahale.vercel.app/og-image.jpg">
+<meta property="og:url" content="https://designer-coderajay.github.io/Portfolio/">
+<meta property="og:image" content="https://designer-coderajay.github.io/Portfolio/og-image.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23161616'/%3E%3Ccircle cx='22' cy='32' r='6' fill='none' stroke='%23FDFDFC' stroke-width='3'/%3E%3Ccircle cx='45' cy='32' r='6' fill='%23FDFDFC'/%3E%3Cline x1='28' y1='32' x2='39' y2='32' stroke='%23FDFDFC' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,15 +75,28 @@ b,strong{font-weight:600}
 
 /* sticky top nav */
 .topnav{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--bg) 82%, transparent);backdrop-filter:saturate(140%) blur(8px);-webkit-backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
-.nav-inner{max-width:640px;margin:0 auto;padding:0 24px;height:52px;display:flex;align-items:center;gap:20px}
+.nav-inner{max-width:880px;margin:0 auto;padding:0 24px;height:52px;display:flex;align-items:center;gap:20px}
 .nav-brand{font-family:var(--mono);font-weight:500;font-size:13px;letter-spacing:.02em;text-decoration:none;color:var(--text);border:1px solid var(--line-strong);border-radius:6px;padding:4px 8px;line-height:1;transition:border-color .15s,color .15s}
 .nav-brand:hover{border-color:var(--text);color:var(--accent)}
-.nav-links{display:flex;gap:22px;margin-right:auto;margin-left:6px}
+.nav-links{display:flex;gap:19px;margin-right:auto;margin-left:6px;white-space:nowrap}
 .nav-links a{font-size:13.5px;color:var(--muted);text-decoration:none;position:relative;padding:4px 0;transition:color .15s}
 .nav-links a:hover{color:var(--text)}
 .nav-links a.active{color:var(--text)}
 .nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);border-radius:2px}
-@media (max-width:620px){.nav-links{display:none}}
+.iconbtn.nav-toggle{display:none}
+@media (max-width:780px){
+  .nav-links{
+    display:none;flex-direction:column;gap:0;margin:0;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--bg);border-bottom:1px solid var(--line);
+    padding:2px 24px 10px;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:11px 0;border-bottom:1px solid var(--line)}
+  .nav-links a:last-child{border-bottom:none}
+  .nav-links a.active::after{bottom:1px}
+  .iconbtn.nav-toggle{display:grid}
+}
 .page{max-width:640px;margin:0 auto;padding:52px 24px 56px}
 .page{position:relative}
 .page::before{content:"";position:absolute;top:-52px;left:0;right:0;width:100%;height:520px;z-index:-1;pointer-events:none;
@@ -216,7 +229,15 @@ b,strong{font-weight:600}
 .plain-row:hover{background:var(--line)}
 .plain-row .r{font-family:var(--mono);font-size:11.5px;color:var(--faint);text-align:right;white-space:nowrap}
 .plain-row .sub{color:var(--muted);font-size:13px;margin-top:2px}
+.plain-row.expandable{cursor:pointer}
+.expand-chevron{display:inline-block;margin-left:5px;font-size:10px;color:var(--faint);transition:transform .2s ease}
+.plain-row.expandable.open .expand-chevron{transform:rotate(180deg)}
+.row-expand-note{display:none;color:var(--muted);font-size:12.5px;line-height:1.6;max-width:52ch;margin-top:8px}
+.plain-row.expandable.open .row-expand-note{display:block}
 .inline-note{color:var(--muted);font-size:13.5px;margin-top:14px}
+
+/* stat count-up */
+.stat-count{font-variant-numeric:tabular-nums}
 .inline-note b{color:var(--text);font-weight:500}
 
 /* skills, one line per group, as in the resume */
@@ -244,16 +265,21 @@ footer{border-top:1px solid var(--line);padding-top:18px;font-family:var(--mono)
 <nav class="topnav" id="topnav">
   <div class="nav-inner">
     <a class="nav-brand" href="#main">AM</a>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#circuit">Circuit</a>
-      <a href="#writing">Writing</a>
       <a href="#glassbox">Glassbox</a>
+      <a href="#writing">Writing</a>
+      <a href="#publications">Publications</a>
       <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </div>
     <button class="iconbtn" id="soundBtnNav" aria-label="Mute interface sound" aria-pressed="true">
       <svg id="soundIconNav" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg>
+    </button>
+    <button class="iconbtn nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg id="navToggleIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
     </button>
   </div>
 </nav>
@@ -273,7 +299,7 @@ footer{border-top:1px solid var(--line);padding-top:18px;font-family:var(--mono)
   </header>
 
   <section class="intro" id="about">
-    <p>I reverse-engineer transformers. For my thesis I measured how well a model's confidence predicts whether its explanation is faithful. The answer: almost not at all. The correlation is <b>r&nbsp;=&nbsp;0.009</b>, measured with causal circuit analysis on GPT-2&nbsp;Small.</p>
+    <p>I reverse-engineer transformers. For my thesis I measured how well a model's confidence predicts whether its explanation is faithful. The answer: almost not at all. The correlation is <b>r&nbsp;=&nbsp;<span class="stat-count" data-target="0.009" data-decimals="3">0.009</span></b>, measured with causal circuit analysis on GPT-2&nbsp;Small.</p>
     <p>I founded Glassbox AI and turned the method into <a href="https://pypi.org/project/glassbox-mech-interp/" target="_blank" rel="noopener">glassbox</a>, an open-source toolkit that finds the circuit behind a prediction and writes EU&nbsp;AI&nbsp;Act Annex&nbsp;IV documentation from it, plus a <a href="https://arxiv.org/abs/2603.09988" target="_blank" rel="noopener">preprint on arXiv</a>. Before that: reproducible RAG and ML pipelines on Azure, agentic systems on LangGraph and MCP.</p>
     <p>What I want to work on next: faithfulness metrics beyond ERASER, whether circuits found on toy tasks tell us anything about frontier models, and how far an interpretability audit can be pushed toward regulator-ready evidence.</p>
   </section>
@@ -330,7 +356,12 @@ footer{border-top:1px solid var(--line);padding-top:18px;font-family:var(--mono)
     <div class="plain" style="margin:20px 0 6px">
       <div class="plain-row"><span><b>Method</b><div class="sub">Attribution patching (activation diff times gradient), three forward passes</div></span><span class="r">3 passes</span></div>
       <div class="plain-row"><span><b>Speed</b><div class="sub">About 1.8 s per analysis on GPT-2, laptop hardware, roughly 37x faster than ACDC</div></span><span class="r">1.8 s</span></div>
-      <div class="plain-row"><span><b>Benchmark</b><div class="sub">IOI on GPT-2: sufficiency 1.00 · comprehensiveness 0.543 · F1 0.704</div></span><span class="r">Grade B</span></div>
+      <div class="plain-row expandable" id="benchmarkRow" role="button" tabindex="0" aria-expanded="false">
+        <span><b>Benchmark<span class="expand-chevron" aria-hidden="true">⌄</span></b><div class="sub">IOI on GPT-2: sufficiency 1.00 · comprehensiveness 0.543 · F1 0.704</div>
+          <div class="row-expand-note">Sufficiency: does the isolated circuit alone reproduce the model's output? Comprehensiveness: does removing it destroy that output? High sufficiency with low comprehensiveness, as here, means the circuit is enough but not necessary &mdash; the same gap the r&nbsp;=&nbsp;0.009 result above is measuring.</div>
+        </span>
+        <span class="r">Grade B</span>
+      </div>
       <div class="plain-row"><span><b>Coverage</b><div class="sub">9 architecture families validated, GPT-2 through Llama-3, Mistral, Gemma-2, Qwen2.5, Phi-3</div></span><span class="r">82M to 12B</span></div>
       <div class="plain-row"><span><b>Annex IV output</b><div class="sub">8 of 9 sections auto-filled and content-hashed. Section 8 stays with a human signatory</div></span><span class="r">JSON · HTML</span></div>
       <div class="plain-row"><span><b>Verification</b><div class="sub">932 tests passing in CI · 71% coverage</div></span><span class="r">932 tests</span></div>
@@ -349,12 +380,12 @@ footer{border-top:1px solid var(--line);padding-top:18px;font-family:var(--mono)
   <section id="writing">
     <h2 class="label">Writing</h2>
     <div class="index">
-      <a class="row" href="essays/sufficient-but-not-complete.html">
+      <a class="row" href="sufficient-but-not-complete.html">
         <span class="row-top"><span class="row-name">100% sufficient, 22% comprehensive</span><span class="ext">essay</span></span>
         <span class="row-desc">What ablating an IOI circuit actually tells you, and why two faithfulness metrics disagreeing is the finding, not a bug.</span>
         <span class="row-metric"><b>mechanistic interpretability</b> · GPT-2 Small · ERASER</span>
       </a>
-      <a class="row" href="essays/confidence-is-not-faithfulness.html">
+      <a class="row" href="confidence-is-not-faithfulness.html">
         <span class="row-top"><span class="row-name">The correlation was 0.009</span><span class="ext">essay</span></span>
         <span class="row-desc">A model's confidence tells you nothing about whether its explanation is faithful. Why the shortcut everyone wants does not exist.</span>
         <span class="row-metric"><b>faithfulness evaluation</b> · null result · n=50</span>
@@ -521,6 +552,12 @@ paintSound();
   var links = Array.prototype.slice.call(document.querySelectorAll(".nav-links a"));
   var map = {};
   links.forEach(function(a){ var id=a.getAttribute("href").slice(1); var el=document.getElementById(id); if(el) map[id]=a; });
+  // sections with no direct nav link keep the preceding nav item highlighted
+  var fallback = {skills:"experience", education:"experience"};
+  Object.keys(fallback).forEach(function(id){
+    var el=document.getElementById(id), target=map[fallback[id]];
+    if(el && target) map[id]=target;
+  });
   var ids = Object.keys(map);
   if(!ids.length || !("IntersectionObserver" in window)) return;
   var visible = {};
@@ -534,6 +571,74 @@ paintSound();
   ids.forEach(function(id){ obs.observe(document.getElementById(id)); });
   // soft tick on nav click
   links.forEach(function(a){ a.addEventListener("click", function(){ click(680,.045,.02); }); });
+})();
+
+/* ---------- mobile nav toggle ---------- */
+(function(){
+  var toggle = document.getElementById("navToggle");
+  var links = document.getElementById("navLinks");
+  if(!toggle || !links) return;
+  function closeMenu(){
+    links.classList.remove("open");
+    toggle.setAttribute("aria-expanded","false");
+    toggle.setAttribute("aria-label","Open menu");
+  }
+  function openMenu(){
+    links.classList.add("open");
+    toggle.setAttribute("aria-expanded","true");
+    toggle.setAttribute("aria-label","Close menu");
+  }
+  toggle.addEventListener("click", function(){
+    if(links.classList.contains("open")){ closeMenu(); }
+    else { openMenu(); click(680,.045,.02); }
+  });
+  links.addEventListener("click", function(e){ if(e.target.tagName === "A") closeMenu(); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeMenu(); });
+  document.addEventListener("click", function(e){
+    if(links.classList.contains("open") && !links.contains(e.target) && !toggle.contains(e.target)){ closeMenu(); }
+  });
+  window.addEventListener("resize", function(){ if(window.innerWidth > 780) closeMenu(); });
+})();
+
+/* ---------- expandable metric row ---------- */
+(function(){
+  var row = document.getElementById("benchmarkRow");
+  if(!row) return;
+  function toggle(){
+    var open = row.classList.toggle("open");
+    row.setAttribute("aria-expanded", open ? "true" : "false");
+    if(open) click(820,.04,.02);
+  }
+  row.addEventListener("click", toggle);
+  row.addEventListener("keydown", function(e){
+    if(e.key === "Enter" || e.key === " "){ e.preventDefault(); toggle(); }
+  });
+})();
+
+/* ---------- stat count-up ---------- */
+(function(){
+  var els = Array.prototype.slice.call(document.querySelectorAll(".stat-count"));
+  if(!els.length || !("IntersectionObserver" in window)) return;
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduced) return;
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      obs.unobserve(e.target);
+      var target = parseFloat(e.target.getAttribute("data-target"));
+      var decimals = parseInt(e.target.getAttribute("data-decimals") || "0", 10);
+      var dur = 900, start = null;
+      function step(ts){
+        if(start === null) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        e.target.textContent = (target * p).toFixed(decimals);
+        if(p < 1) requestAnimationFrame(step);
+        else e.target.textContent = target.toFixed(decimals);
+      }
+      requestAnimationFrame(step);
+    });
+  }, {threshold:.6});
+  els.forEach(function(el){ obs.observe(el); });
 })();
 
 
