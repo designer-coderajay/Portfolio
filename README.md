@@ -4,9 +4,9 @@ tags: []
 
 ---
 
-# Portfolio
+# Ajay Mahale — Portfolio
 
-Personal site for Ajay Pravin Mahale — AI researcher/engineer, founder of Glassbox AI. Covers mechanistic interpretability, LLM faithfulness evaluation, and XAI work.
+Source for [ajay-mahale's portfolio](https://designer-coderajay.github.io) — AI researcher/engineer, founder of Glassbox AI. Mechanistic interpretability, LLM faithfulness evaluation, and EU AI Act-ready explainability tooling.
 
 ## Stack
 
