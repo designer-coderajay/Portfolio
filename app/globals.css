@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f3f3ee;
+  --bg-subtle: #ececE5;
+  --ink: #14140f;
+  --muted: #6b6b62;
+  --faint: #9b9b93;
+  --faint-rgb: 155, 155, 147;
+  --network-rgb: 90, 90, 82;
+  --line: #dcdcd3;
+  --accent: #b45309;
+  --accent-soft: rgba(180, 83, 9, 0.08);
+  --accent-dark: #92400e;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #060606;
+  --bg-subtle: #0e0e0d;
+  --ink: #f3f3ee;
+  --muted: #9b9b93;
+  --faint: #6b6b62;
+  --faint-rgb: 107, 107, 98;
+  --network-rgb: 150, 150, 140;
+  --line: #232320;
+  --accent: #fbbf24;
+  --accent-soft: rgba(251, 191, 36, 0.12);
+  --accent-dark: #fcd34d;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+a {
+  color: inherit;
+}
+
