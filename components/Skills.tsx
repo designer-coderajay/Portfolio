@@ -39,7 +39,7 @@ const groups = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="border-t border-line py-32">
+    <section id="skills" className="py-32">
       <motion.div
         initial="hidden"
         whileInView="visible"

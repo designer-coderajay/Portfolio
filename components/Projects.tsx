@@ -47,7 +47,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="border-t border-line py-32">
+    <section id="projects" className="py-32">
       <motion.div
         initial="hidden"
         whileInView="visible"

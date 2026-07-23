@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function TeamJoin() {
   return (
-    <section id="contact" className="border-t border-line py-32">
+    <section id="contact" className="py-32">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
