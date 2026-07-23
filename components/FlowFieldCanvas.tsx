@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import type { MotionValue } from "framer-motion";
 
 type Line = {
   points: { x: number; y: number }[];
@@ -10,14 +11,12 @@ type Line = {
 
 export default function FlowFieldCanvas({
   className,
-  fading
+  opacity: opacityProgress
 }: {
   className?: string;
-  fading: boolean;
+  opacity?: MotionValue<number>;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const fadingRef = useRef(fading);
-  fadingRef.current = fading;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -76,16 +75,16 @@ export default function FlowFieldCanvas({
 
     let raf = 0;
     let t = 0;
-    let opacity = 1;
+    let alpha = 1;
 
     function draw() {
       t += reduceMotion ? 0 : 0.0035;
 
-      const targetOpacity = fadingRef.current ? 0 : 1;
-      opacity += (targetOpacity - opacity) * 0.06;
+      const targetAlpha = opacityProgress ? opacityProgress.get() : 1;
+      alpha += (targetAlpha - alpha) * 0.15;
 
       ctx!.clearRect(0, 0, width, height);
-      if (opacity > 0.01) {
+      if (alpha > 0.01) {
         ctx!.strokeStyle = getComputedStyle(canvas!).color;
         ctx!.lineWidth = 1;
 
@@ -113,7 +112,7 @@ export default function FlowFieldCanvas({
             pts.push({ x, y });
           }
 
-          ctx!.globalAlpha = opacity * 0.55;
+          ctx!.globalAlpha = alpha * 0.55;
           ctx!.beginPath();
           pts.forEach((p, i) => (i === 0 ? ctx!.moveTo(p.x, p.y) : ctx!.lineTo(p.x, p.y)));
           ctx!.stroke();
@@ -124,7 +123,7 @@ export default function FlowFieldCanvas({
     }
 
     if (reduceMotion) {
-      opacity = fadingRef.current ? 0 : 1;
+      alpha = opacityProgress ? opacityProgress.get() : 1;
       draw();
     } else {
       raf = requestAnimationFrame(draw);

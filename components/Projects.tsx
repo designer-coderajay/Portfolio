@@ -30,6 +30,18 @@ const projects = [
     tag: "May 2025 – Jun 2025",
     body: "A multi-agent system on LangGraph coordinating three MCP servers (Postgres, documents, notifications) with hybrid RAG, built to take a rough MVP into something enterprise-shaped. FastAPI streamed data over WebSockets to a Next.js frontend, Celery handled async work, Langfuse and Prometheus/Grafana gave it real observability, all containerized with Docker Compose.",
     href: "https://github.com/designer-coderajay/enterprise-agentic-ai-platform"
+  },
+  {
+    title: "Azure AI RAG System",
+    tag: "Jan 2026 – Jun 2026",
+    body: "Production RAG pipeline on Azure OpenAI and Azure AI Search: documents chunked at 1,000 tokens with 200-token overlap, embedded at 1536 dimensions, retrieved with hybrid vector plus BM25 search, and answered by GPT-4o-mini constrained to the retrieved chunks only. Every response carries a citation back to its source document.",
+    href: "https://github.com/designer-coderajay/azure-ai-rag-system"
+  },
+  {
+    title: "Azure ML Pipeline",
+    tag: "Feb 2026 – Jun 2026",
+    body: "End-to-end MLOps pipeline on Azure ML SDK v2 for heart disease prediction: a four-stage pipeline (data prep, training, evaluation, registration) running on auto-scaling compute clusters, MLflow tracking every run, and automatic promotion to a managed REST endpoint once a model clears the accuracy threshold.",
+    href: "https://github.com/designer-coderajay/azure-ml-pipeline"
   }
 ];
 

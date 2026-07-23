@@ -1,33 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import FlowFieldCanvas from "./FlowFieldCanvas";
 
-const REVEAL_THRESHOLD = 60;
-
 export default function Hero() {
-  const [revealed, setRevealed] = useState(false);
-
-  useEffect(() => {
-    function onScroll() {
-      setRevealed(window.scrollY > REVEAL_THRESHOLD);
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const canvasOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.14]);
+  const hintOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
-    <div id="top" className="relative flex h-dvh flex-col items-center justify-center overflow-hidden px-6 text-center">
+    <div
+      ref={heroRef}
+      id="top"
+      className="relative flex h-dvh flex-col items-center justify-center overflow-hidden px-6 text-center"
+    >
       <div className="pointer-events-none absolute inset-x-0 top-[8%] mx-auto h-[45%] max-w-4xl text-faint">
-        <FlowFieldCanvas className="h-full w-full" fading={revealed} />
+        <FlowFieldCanvas className="h-full w-full" opacity={canvasOpacity} />
       </div>
 
-      <motion.div
-        animate={{ opacity: revealed ? 0.14 : 1 }}
-        transition={{ duration: 0.9, ease: [0.16, 0.8, 0.3, 1] }}
-        className="relative flex flex-col items-center gap-6"
-      >
+      <motion.div style={{ opacity: contentOpacity }} className="relative flex flex-col items-center gap-6">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,8 +43,7 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        animate={{ opacity: revealed ? 0 : 1 }}
-        transition={{ duration: 0.5 }}
+        style={{ opacity: hintOpacity }}
         className="absolute bottom-10 font-mono text-[11px] uppercase tracking-[0.2em] text-faint"
       >
         Scroll
