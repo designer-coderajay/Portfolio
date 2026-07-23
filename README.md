@@ -1,8 +1,3 @@
----
-noteId: "feb541d0860b11f1b0746d1eab0774f0"
-tags: []
-
----
 
 # Ajay Mahale — Portfolio
 
