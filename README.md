@@ -6,7 +6,9 @@ tags: []
 
 # Ajay Mahale — Portfolio
 
-Source for [ajay-mahale's portfolio](https://designer-coderajay.github.io) — AI researcher/engineer, founder of Glassbox AI. Mechanistic interpretability, LLM faithfulness evaluation, and EU AI Act-ready explainability tooling.
+![Portfolio preview](public/preview.jpg)
+
+Source for [ajay-mahale's portfolio](https://designer-coderajay.github.io) — AI researcher/engineer, creator of Glassbox AI. Mechanistic interpretability, LLM faithfulness evaluation, and EU AI Act-ready explainability tooling.
 
 ## Stack
 

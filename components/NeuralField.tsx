@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-type Particle = { x: number; y: number; vx: number; vy: number };
+type Particle = { x: number; y: number; vx: number; vy: number; hub: boolean };
 
 export default function NeuralField() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -26,7 +26,8 @@ export default function NeuralField() {
         x: Math.random() * width,
         y: Math.random() * height,
         vx: (Math.random() - 0.5) * 0.18,
-        vy: (Math.random() - 0.5) * 0.18
+        vy: (Math.random() - 0.5) * 0.18,
+        hub: Math.random() < 0.15
       }));
     }
 
@@ -84,7 +85,8 @@ export default function NeuralField() {
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < linkDist) {
-            ctx!.strokeStyle = `rgba(${dotColor}, ${0.2 * (1 - dist / linkDist)})`;
+            const linkAlpha = (particles[i].hub || particles[j].hub ? 0.5 : 0.35) * (1 - dist / linkDist);
+            ctx!.strokeStyle = `rgba(${dotColor}, ${linkAlpha})`;
             ctx!.lineWidth = 1;
             ctx!.beginPath();
             ctx!.moveTo(particles[i].x, particles[i].y);
@@ -94,10 +96,20 @@ export default function NeuralField() {
         }
       }
 
-      ctx!.fillStyle = `rgba(${dotColor}, 0.6)`;
       particles.forEach((p) => {
+        const radius = p.hub ? 2.6 : 1.6;
+        if (p.hub) {
+          const glow = ctx!.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius * 4);
+          glow.addColorStop(0, `rgba(${dotColor}, 0.35)`);
+          glow.addColorStop(1, `rgba(${dotColor}, 0)`);
+          ctx!.fillStyle = glow;
+          ctx!.beginPath();
+          ctx!.arc(p.x, p.y, radius * 4, 0, Math.PI * 2);
+          ctx!.fill();
+        }
+        ctx!.fillStyle = `rgba(${dotColor}, ${p.hub ? 0.9 : 0.75})`;
         ctx!.beginPath();
-        ctx!.arc(p.x, p.y, 1.3, 0, Math.PI * 2);
+        ctx!.arc(p.x, p.y, radius, 0, Math.PI * 2);
         ctx!.fill();
       });
 

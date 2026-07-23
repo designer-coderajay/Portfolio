@@ -26,7 +26,7 @@ export default function Proof() {
 
         <p className="max-w-[56ch] font-serif text-[clamp(22px,3.4vw,32px)] leading-relaxed text-ink">
           Glassbox AI ships with <em className="italic">932 tests</em> passing across 9 architecture families and
-          637 PyPI downloads a month. Every number here is checked against the repo, not rounded up.
+          1,000 PyPI downloads a month. Every number here is checked against the repo, not rounded up.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">

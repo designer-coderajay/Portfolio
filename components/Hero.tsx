@@ -43,7 +43,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 0.8, 0.3, 1] }}
           className="flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.16em] text-faint"
         >
-          <span>Founder of</span>
+          <span>Creator of</span>
           <span className="rounded-full border border-line px-3 py-1 font-bold text-ink">Glassbox AI</span>
         </motion.div>
       </motion.div>
