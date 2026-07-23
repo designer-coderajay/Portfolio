@@ -60,14 +60,14 @@ export default function Projects() {
         </motion.span>
 
         <div className="mt-10 flex flex-col">
-          {projects.map((p, i) => (
+          {projects.map((p) => (
             <motion.a
               key={p.title}
               href={p.href}
               target="_blank"
               rel="noopener"
               variants={item}
-              className={`group -mx-6 grid gap-x-8 gap-y-3 border-line px-6 py-8 transition-colors hover:bg-bg-subtle sm:-mx-10 sm:grid-cols-[1fr_2fr] sm:px-10 ${i !== 0 ? "border-t" : ""}`}
+              className="group -mx-6 grid gap-x-8 gap-y-3 px-6 py-10 transition-colors hover:bg-bg-subtle sm:-mx-10 sm:grid-cols-[1fr_2fr] sm:px-10"
             >
               <div>
                 <h3 className="font-serif text-[20px] leading-snug text-ink">{p.title}</h3>
