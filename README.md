@@ -1,9 +1,15 @@
+---
+noteId: "982bfeb086c711f1b91ff5a9b64b0466"
+tags: []
 
-# Ajay Mahale — Portfolio
+---
+
+
+# Ajay Mahale · Portfolio
 
 ![Portfolio preview](public/preview.jpg)
 
-Source for [ajay-mahale's portfolio](https://designer-coderajay.github.io) — AI researcher/engineer, creator of Glassbox AI. Mechanistic interpretability, LLM faithfulness evaluation, and EU AI Act-ready explainability tooling.
+Source for [ajay-mahale's portfolio](https://designer-coderajay.github.io): AI researcher/engineer, creator of Glassbox AI. Mechanistic interpretability, LLM faithfulness evaluation, and EU AI Act-ready explainability tooling.
 
 ## Stack
 
@@ -11,9 +17,9 @@ Next.js 14 (App Router) + TypeScript + Tailwind CSS + Framer Motion. Generative-
 
 ## Structure
 
-- `app/` — root layout, global styles, single page (`page.tsx`)
-- `components/` — one component per section: `Hero`, `About`, `Experience`, `Projects`, `Finding`, `Approach`, `Couplet`, `Skills`, `Proof`, `TeamJoin`, plus `Navbar`, `Footer`, `ScrollDots`, and the two canvas backgrounds
-- `public/` — resume PDF, OG image
+- `app/`: root layout, global styles, single page (`page.tsx`)
+- `components/`: one component per section: `Hero`, `About`, `Experience`, `Projects`, `Finding`, `Approach`, `Couplet`, `Skills`, `Proof`, `TeamJoin`, plus `Navbar`, `Footer`, `ScrollDots`, and the two canvas backgrounds
+- `public/`: resume PDF, OG image
 
 ## Run locally
 

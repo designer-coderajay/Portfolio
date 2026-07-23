@@ -20,7 +20,7 @@ export default function Finding() {
           Model confidence predicts explanation faithfulness almost not at all: r = 0.009, measured with causal
           circuit analysis on GPT-2 Small (Indirect Object Identification task). The 6-head IOI circuit explains
           61.4% of the logit difference and is <em className="italic">sufficient</em> on its own, but removing it
-          still leaves 78% of the signal intact through backup heads — it isn&rsquo;t <em className="italic">necessary</em>.
+          still leaves 78% of the signal intact through backup heads: it isn&rsquo;t <em className="italic">necessary</em>.
         </p>
       </motion.div>
     </section>

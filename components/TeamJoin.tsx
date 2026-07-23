@@ -42,8 +42,8 @@ export default function TeamJoin() {
             <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-faint">Certifications</span>
             <ul className="mt-4 flex flex-col gap-2 text-[14.5px] text-muted">
               <li>Microsoft Certified: Azure AI Engineer Associate, Azure AI Fundamentals</li>
-              <li>BlueDot Impact — Technical AI Safety fellowship</li>
-              <li>Google — AI Essentials, UX Research</li>
+              <li>BlueDot Impact, Technical AI Safety fellowship</li>
+              <li>Google, AI Essentials, UX Research</li>
             </ul>
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function TeamJoin() {
           <div className="mt-10">
             <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-faint">Availability</span>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
-              If you&rsquo;re hiring for interpretability, AI safety, or eval work — let&rsquo;s talk.
+              If you&rsquo;re hiring for interpretability, AI safety, or eval work, let&rsquo;s talk.
             </p>
             <a
               href="/Ajay-Mahale-Resume.pdf"
@@ -68,7 +68,7 @@ export default function TeamJoin() {
 
           <div className="mt-10">
             <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-faint">General inquiries</span>
-            <p className="mt-3 text-[16px] leading-relaxed text-muted">Press, collaboration, or curiosity — all welcome.</p>
+            <p className="mt-3 text-[16px] leading-relaxed text-muted">Press, collaboration, or curiosity. All welcome.</p>
             <a
               href="mailto:mahale.ajay01@gmail.com"
               className="mt-4 inline-flex items-center gap-1.5 border border-line px-5 py-2.5 font-mono text-[13px] font-bold text-ink transition-colors hover:border-ink"

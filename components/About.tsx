@@ -17,8 +17,8 @@ export default function About() {
           A model&rsquo;s explanation for its own output is often made up after the fact.
         </h2>
         <p className="max-w-[52ch] text-[17px] leading-relaxed text-muted sm:text-[19px]">
-          I reverse-engineer transformers with causal circuit analysis — activation patching, ablation,
-          sufficiency and comprehensiveness scoring against ERASER metrics — to test whether a stated
+          I reverse-engineer transformers with causal circuit analysis (activation patching, ablation,
+          sufficiency and comprehensiveness scoring against ERASER metrics) to test whether a stated
           explanation is causally load-bearing, not just fluent.
         </p>
       </motion.div>

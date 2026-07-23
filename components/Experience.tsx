@@ -17,10 +17,10 @@ const roles = [
     role: "Machine Learning Engineer",
     org: "BaseMotion AI, Berlin",
     dates: "Nov 2025 – Apr 2026",
-    body: "Applied mechanistic circuit analysis — activation patching, ablation — to GPT-2 Small, scoring explanations against ERASER sufficiency/comprehensiveness metrics. Built the pipeline in PyTorch and TransformerLens with an automated test suite and CI for reproducible runs. Result: r = 0.009 between model confidence and explanation faithfulness — confidence carries no signal. Separately measured that fluent LLM-written explanations score 99% on perceived quality (ERASER), up from 60%, with no corresponding gain in mechanistic faithfulness."
+    body: "Applied mechanistic circuit analysis (activation patching, ablation) to GPT-2 Small, scoring explanations against ERASER sufficiency/comprehensiveness metrics. Built the pipeline in PyTorch and TransformerLens with an automated test suite and CI for reproducible runs. Result: r = 0.009 between model confidence and explanation faithfulness: confidence carries no signal. Separately measured that fluent LLM-written explanations score 99% on perceived quality (ERASER), up from 60%, with no corresponding gain in mechanistic faithfulness."
   },
   {
-    role: "Independent Researcher — Project Thesis & AI Safety",
+    role: "Independent Researcher, Project Thesis & AI Safety",
     org: "Hochschule Trier",
     dates: "Apr 2024 – Sep 2025",
     body: "Synthesized 25+ papers across AI alignment, scalable oversight, and interpretability into structured technical reports, benchmarking robustness methodologies and cataloguing frontier LLM failure modes to establish baseline quantitative metrics for the field."

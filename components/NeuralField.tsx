@@ -43,7 +43,7 @@ export default function NeuralField() {
       canvas!.style.height = `${height}px`;
       ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
       // Mobile browser chrome hides/shows on scroll and fires resize with the
-      // same width — only reseed on an actual width change, not that jitter.
+      // same width, only reseed on an actual width change, not that jitter.
       if (widthChanged || particles.length === 0) seed();
     }
     resize();

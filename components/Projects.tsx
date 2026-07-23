@@ -16,7 +16,7 @@ const projects = [
   {
     title: "Causally-Grounded Mechanistic Interpretability",
     tag: "M.Sc. Thesis · Dec 2025 – May 2026",
-    body: "Evaluates a model circuit the same way you'd evaluate an explanation: does removing it break the output (sufficiency), and does keeping everything else still break it (comprehensiveness)? On GPT-2's IOI task the discovered circuit beat an attention-only baseline on 75% of prompts, scored 100% sufficiency — but only 22% comprehensiveness. Sufficiency alone oversells how reliable an explanation is.",
+    body: "Evaluates a model circuit the same way you'd evaluate an explanation: does removing it break the output (sufficiency), and does keeping everything else still break it (comprehensiveness)? On GPT-2's IOI task the discovered circuit beat an attention-only baseline on 75% of prompts, scored 100% sufficiency, but only 22% comprehensiveness. Sufficiency alone oversells how reliable an explanation is.",
     href: "https://github.com/designer-coderajay/Causally-Grounded-Mechanistic-Interpretability"
   },
   {
