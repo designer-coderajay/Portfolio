@@ -32,14 +32,19 @@ export default function NeuralField() {
     }
 
     function resize() {
-      width = window.innerWidth;
-      height = window.innerHeight;
+      const newWidth = window.innerWidth;
+      const newHeight = window.innerHeight;
+      const widthChanged = Math.abs(newWidth - width) > 2;
+      width = newWidth;
+      height = newHeight;
       canvas!.width = width * dpr;
       canvas!.height = height * dpr;
       canvas!.style.width = `${width}px`;
       canvas!.style.height = `${height}px`;
       ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
-      seed();
+      // Mobile browser chrome hides/shows on scroll and fires resize with the
+      // same width — only reseed on an actual width change, not that jitter.
+      if (widthChanged || particles.length === 0) seed();
     }
     resize();
     window.addEventListener("resize", resize);
@@ -49,7 +54,19 @@ export default function NeuralField() {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
     }
+    function onTouchMove(e: TouchEvent) {
+      const t = e.touches[0];
+      if (!t) return;
+      mouse.x = t.clientX;
+      mouse.y = t.clientY;
+    }
+    function onTouchEnd() {
+      mouse.x = -9999;
+      mouse.y = -9999;
+    }
     window.addEventListener("mousemove", onMove, { passive: true });
+    window.addEventListener("touchmove", onTouchMove, { passive: true });
+    window.addEventListener("touchend", onTouchEnd, { passive: true });
 
     const linkDist = 130;
     const repelRadius = 150;
@@ -122,6 +139,8 @@ export default function NeuralField() {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
     };
   }, []);
 

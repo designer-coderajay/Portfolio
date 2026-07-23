@@ -18,7 +18,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div id="top" className="relative flex h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
+    <div id="top" className="relative flex h-dvh flex-col items-center justify-center overflow-hidden px-6 text-center">
       <div className="pointer-events-none absolute inset-x-0 top-[8%] mx-auto h-[45%] max-w-4xl text-faint">
         <FlowFieldCanvas className="h-full w-full" fading={revealed} />
       </div>

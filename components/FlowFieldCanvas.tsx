@@ -61,8 +61,18 @@ export default function FlowFieldCanvas({
     function onLeave() {
       mouse.active = false;
     }
+    function onTouchMove(e: TouchEvent) {
+      const t = e.touches[0];
+      if (!t) return;
+      const rect = canvas!.getBoundingClientRect();
+      mouse.x = t.clientX - rect.left;
+      mouse.y = t.clientY - rect.top;
+      mouse.active = true;
+    }
     window.addEventListener("mousemove", onMove);
     canvas.addEventListener("mouseleave", onLeave);
+    window.addEventListener("touchmove", onTouchMove, { passive: true });
+    window.addEventListener("touchend", onLeave, { passive: true });
 
     let raf = 0;
     let t = 0;
@@ -125,6 +135,8 @@ export default function FlowFieldCanvas({
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", onMove);
       canvas.removeEventListener("mouseleave", onLeave);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onLeave);
     };
   }, []);
 
