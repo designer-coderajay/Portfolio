@@ -35,10 +35,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 0.8, 0.3, 1] }}
-          className="flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.16em] text-faint"
+          className="flex flex-wrap items-center justify-center gap-2 font-mono text-[12px] uppercase tracking-[0.16em] text-faint"
         >
           <span>Creator of</span>
           <span className="rounded-full border border-line px-3 py-1 font-bold text-ink">Glassbox AI</span>
+          <span className="rounded-full border border-line px-3 py-1 font-bold text-accent">
+            Open to opportunities
+          </span>
         </motion.div>
       </motion.div>
 

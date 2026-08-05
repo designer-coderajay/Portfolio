@@ -66,15 +66,12 @@ export default function Navbar() {
       className="fixed inset-x-0 top-0 z-50"
     >
       <div className="mx-auto flex max-w-page items-center justify-between px-6 py-5 sm:px-10">
-        <a href="#top" aria-label="Ajay Mahale, home" className="inline-flex items-center gap-2.5">
-          <svg width="20" height="20" viewBox="0 0 18 18" aria-hidden="true" className="text-ink">
-            <circle cx="4.5" cy="9" r="3" fill="none" stroke="currentColor" strokeWidth="1.4" />
-            <circle cx="13.5" cy="9" r="3" fill="currentColor" />
-            <line x1="7.5" y1="9" x2="10.5" y2="9" stroke="currentColor" strokeWidth="1.4" />
-          </svg>
-          <span className="font-mono text-[13px] font-bold uppercase tracking-[0.12em] text-ink">
-            Ajay Mahale
-          </span>
+        <a
+          href="#top"
+          aria-label="Ajay Mahale, home"
+          className="grid h-10 w-10 place-items-center rounded-full border border-line font-mono text-[13px] font-bold tracking-wide text-ink transition-colors hover:border-ink"
+        >
+          AM
         </a>
 
         <div className="flex items-center gap-0.5 sm:gap-1">

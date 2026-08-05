@@ -20,8 +20,8 @@ export default function TeamJoin() {
             into audit-ready evidence, not slide-deck claims.
           </p>
           <p className="mt-6 text-[17px] leading-relaxed text-muted">
-            Trier, Germany. Open to full-time ML engineer and AI safety roles in Europe, available from June
-            2026, no sponsorship required.
+            Trier, Germany. Open to full-time ML engineer / AI safety roles and PhD positions, available from
+            June 2026, open to relocate, no sponsorship required.
           </p>
 
           <div className="mt-10 border-t border-line pt-8">
