@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import CurrentWork from "@/components/CurrentWork";
 import Finding from "@/components/Finding";
 import Approach from "@/components/Approach";
 import Couplet from "@/components/Couplet";
@@ -22,6 +23,7 @@ export default function Home() {
         <About />
         <Experience />
         <Projects />
+        <CurrentWork />
         <Finding />
         <Approach />
         <Couplet />

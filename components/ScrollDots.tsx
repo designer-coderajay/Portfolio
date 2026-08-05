@@ -7,6 +7,7 @@ const sections = [
   "about",
   "experience",
   "projects",
+  "current-work",
   "finding",
   "approach",
   "skills",
