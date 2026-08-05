@@ -43,6 +43,9 @@ export default function CurrentWork() {
         <motion.span variants={item} className="font-mono text-[12px] uppercase tracking-[0.2em] text-faint">
           Current Work
         </motion.span>
+        <motion.p variants={item} className="mt-3 text-[14px] text-faint">
+          Unpublished. Links go live on release.
+        </motion.p>
 
         <div className="mt-10 flex flex-col">
           {papers.map((p) => (
