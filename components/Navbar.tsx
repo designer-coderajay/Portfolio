@@ -71,8 +71,9 @@ export default function Navbar() {
           aria-label="Ajay Mahale, home"
           className="inline-flex items-center text-ink transition-opacity hover:opacity-70"
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M2 20 7 3l5 11 5-11 5 17H2Z" />
+          <svg width="34" height="17" viewBox="0 0 50 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2 2 22h4.2l2.4-5h6.8l2.4 5H22L12 2Zm0 5.3 2.7 6.2H9.3L12 7.3Z" />
+            <path d="M27 20 32 3l5 11 5-11 5 17H27Z" />
           </svg>
         </a>
 
