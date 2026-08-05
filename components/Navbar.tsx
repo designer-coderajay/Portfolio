@@ -69,12 +69,16 @@ export default function Navbar() {
         <a
           href="#top"
           aria-label="Ajay Mahale, home"
-          className="inline-flex items-center text-ink transition-opacity hover:opacity-70"
+          className="inline-flex items-center gap-2.5 text-ink transition-opacity hover:opacity-70"
         >
-          <svg width="34" height="17" viewBox="0 0 50 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 2 2 22h4.2l2.4-5h6.8l2.4 5H22L12 2Zm0 5.3 2.7 6.2H9.3L12 7.3Z" />
-            <path d="M27 20 32 3l5 11 5-11 5 17H27Z" />
-          </svg>
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-line">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2 2 22h4.2l2.4-5h6.8l2.4 5H22L12 2Zm0 5.3 2.7 6.2H9.3L12 7.3Z" />
+            </svg>
+          </span>
+          <span className="font-mono text-[13px] font-bold uppercase tracking-[0.12em] text-ink">
+            Ajay Mahale
+          </span>
         </a>
 
         <div className="flex items-center gap-0.5 sm:gap-1">

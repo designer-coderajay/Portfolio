@@ -18,22 +18,52 @@ const groups = [
     tags: ["Python", "SQL"]
   },
   {
-    label: "Tools & Frameworks",
-    tags: ["PyTorch", "TransformerLens", "Hugging Face", "scikit-learn", "LangGraph", "MCP", "Qdrant", "LlamaIndex"]
+    label: "ML & Research",
+    tags: ["PyTorch", "TransformerLens", "Hugging Face", "scikit-learn", "NumPy", "Pandas", "XGBoost", "LightGBM", "SHAP"]
   },
   {
-    label: "Expertise",
+    label: "LLM & Agents",
+    tags: [
+      "LLM Evaluation",
+      "RAG (vector + BM25 hybrid)",
+      "LangGraph",
+      "Model Context Protocol (MCP)",
+      "Qdrant",
+      "LlamaIndex",
+      "Prompt Engineering"
+    ]
+  },
+  {
+    label: "Cloud & MLOps",
+    tags: [
+      "Azure ML (SDK v2)",
+      "Azure OpenAI",
+      "Azure AI Search",
+      "MLflow",
+      "FastAPI",
+      "REST APIs",
+      "Docker",
+      "Docker Compose",
+      "Git",
+      "GitHub Actions",
+      "CI/CD",
+      "Streamlit"
+    ]
+  },
+  {
+    label: "Focus",
     tags: [
       "Mechanistic Interpretability",
-      "Foundational Models",
-      "Multi-Agent Systems",
+      "Causal Circuit Analysis",
+      "Model Evaluation & Observability",
       "Reproducible ML Pipelines",
-      "Quantitative Research"
+      "EU AI Act Annex IV Documentation",
+      "Python Packaging (PyPI)"
     ]
   },
   {
     label: "Languages",
-    tags: ["English (C1)", "German (B1)", "Hindi (native)", "French (beginner)"]
+    tags: ["English (C1)", "German (B1)", "Hindi (Native)", "French (Beginner)"]
   }
 ];
 
@@ -51,7 +81,7 @@ export default function Skills() {
           Skills
         </motion.span>
 
-        <div className="mt-10 grid gap-8 sm:grid-cols-2">
+        <div className="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {groups.map((g) => (
             <motion.div key={g.label} variants={item}>
               <h3 className="font-serif text-[19px] text-ink">{g.label}</h3>
