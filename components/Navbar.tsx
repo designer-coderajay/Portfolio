@@ -69,9 +69,11 @@ export default function Navbar() {
         <a
           href="#top"
           aria-label="Ajay Mahale, home"
-          className="grid h-10 w-10 place-items-center rounded-full border border-line font-mono text-[13px] font-bold tracking-wide text-ink transition-colors hover:border-ink"
+          className="inline-flex items-center text-ink transition-opacity hover:opacity-70"
         >
-          AM
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M2 20 7 3l5 11 5-11 5 17H2Z" />
+          </svg>
         </a>
 
         <div className="flex items-center gap-0.5 sm:gap-1">
