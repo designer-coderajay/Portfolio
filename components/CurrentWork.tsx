@@ -14,8 +14,9 @@ const item = {
 
 const papers = [
   {
-    title: "Explanation Multiplicity and the Instability of Conformity Claims",
-    tag: "Target arXiv · Sep 2026",
+    title: "Explanation Multiplicity: Circuit-Level Interpretability Evidence Does Not Survive Defensible Analytic Variation",
+    tag: "arXiv:2608.13754 · 2026",
+    href: "https://arxiv.org/abs/2608.13754",
     body: "Circuits recovered by mechanistic interpretability tools are not unique: the same model, task, and method can return different circuits depending on ablation operator, corruption distribution, and metric choice. This measures how far an EU AI Act Annex IV conformity claim built from a discovered circuit moves across the space of defensible analytic specifications, and tests whether that movement is distinguishable from a size-matched random circuit baseline."
   },
   {
@@ -44,7 +45,7 @@ export default function CurrentWork() {
           Current Work
         </motion.span>
         <motion.p variants={item} className="mt-3 text-[14px] text-faint">
-          Unpublished. Links go live on release.
+          One paper live on arXiv. Rest unpublished — links go live on release.
         </motion.p>
 
         <div className="mt-10 flex flex-col">
@@ -60,9 +61,20 @@ export default function CurrentWork() {
               </div>
               <div className="flex flex-col gap-3">
                 <p className="text-[16px] leading-relaxed text-muted">{p.body}</p>
-                <span className="font-mono text-[12px] font-bold uppercase tracking-wide text-accent">
-                  In progress
-                </span>
+                {p.href ? (
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener"
+                    className="font-mono text-[12px] font-bold uppercase tracking-wide text-accent underline underline-offset-4"
+                  >
+                    Read on arXiv
+                  </a>
+                ) : (
+                  <span className="font-mono text-[12px] font-bold uppercase tracking-wide text-accent">
+                    In progress
+                  </span>
+                )}
               </div>
             </motion.div>
           ))}
