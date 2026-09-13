@@ -9,6 +9,11 @@ const links = [
   {
     href: "https://huggingface.co/spaces/designer-coderajay/Glassbox-AI-2.0-Mechanistic-Interpretability-tool",
     label: "Live demo"
+  },
+  { href: "https://huggingface.co/papers/2603.09988", label: "HF Papers" },
+  {
+    href: "https://www.semanticscholar.org/paper/2e460419bd1eafe8062de08e52c7e63b0bce7e91",
+    label: "Semantic Scholar"
   }
 ];
 
@@ -25,8 +30,8 @@ export default function Proof() {
         <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-faint">Proof</span>
 
         <p className="max-w-[56ch] font-serif text-[clamp(22px,3.4vw,32px)] leading-relaxed text-ink">
-          Glassbox AI ships with <em className="italic">932 tests</em> passing across 9 architecture families and
-          1,000 PyPI downloads a month. Every number here is checked against the repo, not rounded up.
+          Glassbox AI ships with <em className="italic">943 tests</em> passing across 9 architecture families and
+          4,400+ PyPI downloads to date. Every number here is checked against the repo, not rounded up.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">

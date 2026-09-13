@@ -14,6 +14,12 @@ const item = {
 
 const roles = [
   {
+    role: "Creator & Maintainer",
+    org: "Glassbox AI, Trier",
+    dates: "Feb 2026 – Present",
+    body: "Built and maintain glassbox-mech-interp (PyPI, MIT core): causal circuit discovery via activation patching, with an ACDC path for exact edge-level discovery, extended to Llama-3, Mistral, Gemma and Phi-3 through a dedicated GQA/RMSNorm architecture adapter. Automates EU AI Act Annex IV documentation generation from circuit analysis into structured JSON. Shipped with a CLI, automated test suite, GitHub Actions CI, and a live Hugging Face demo — 15–37x faster than ACDC on GPT-2 Small (single-run, Apple M2 Pro)."
+  },
+  {
     role: "Machine Learning Engineer",
     org: "BaseMotion AI, Berlin",
     dates: "Nov 2025 – Apr 2026",

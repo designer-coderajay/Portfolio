@@ -16,13 +16,26 @@ const papers = [
   {
     title: "Explanation Multiplicity: Circuit-Level Interpretability Evidence Does Not Survive Defensible Analytic Variation",
     tag: "arXiv:2608.13754 · 2026",
-    href: "https://arxiv.org/abs/2608.13754",
+    links: [
+      { href: "https://arxiv.org/abs/2608.13754", label: "arXiv" },
+      { href: "https://www.semanticscholar.org/paper/887c711301bfbc8c0781bfbf2d130abb2d22dafb", label: "Semantic Scholar" },
+      { href: "https://pith.science/paper/2608.13754", label: "Pith review" },
+      {
+        href: "https://github.com/designer-coderajay/Circuit-level-interpretability-evidence-does-not-survive-defensible-analytic-variation",
+        label: "Code"
+      }
+    ],
     body: "Circuits recovered by mechanistic interpretability tools are not unique: the same model, task, and method can return different circuits depending on ablation operator, corruption distribution, and metric choice. This measures how far an EU AI Act Annex IV conformity claim built from a discovered circuit moves across the space of defensible analytic specifications, and tests whether that movement is distinguishable from a size-matched random circuit baseline."
   },
   {
-    title: "Causal Attribution for Agentic Decisions",
-    tag: "Target arXiv · Dec 2026",
-    body: "Multi-agent systems produce decisions that no single deployer can fully attribute: observability tooling logs what happened but not what caused it. This tests whether observability-derived attribution actually tracks causally-measured attribution across real multi-agent traces, and whether it's systematically biased toward recency and verbosity."
+    title: "Causal Attribution for Agentic Decisions: Estimators, Coupling, and a Traceability Specification",
+    tag: "arXiv:2609.06445 · 2026",
+    links: [
+      { href: "https://arxiv.org/abs/2609.06445", label: "arXiv" },
+      { href: "https://www.semanticscholar.org/paper/547cc9e4b2607b4467d5d2f7502627306c7a43ff", label: "Semantic Scholar" },
+      { href: "https://github.com/designer-coderajay/Causal-Attribution-for-Agentic-Decisions", label: "Code" }
+    ],
+    body: "Multi-agent systems produce decisions that no single deployer can fully attribute. This shows the standard marginal-effect estimator can return the same value for a causally inert step and a decisive one — under common random numbers, it returns an exact zero for a decisive step on roughly one run in ten, so a zero does not certify that a step did nothing. Derives a coupling that preserves estimability and a traceability specification bridging the gap between the EU AI Act's Article 86 explanation rights (Aug 2026) and its deferred documentation requirements (Dec 2027)."
   },
   {
     title: "What Monitorability Metrics Miss",
@@ -45,7 +58,7 @@ export default function CurrentWork() {
           Current Work
         </motion.span>
         <motion.p variants={item} className="mt-3 text-[14px] text-faint">
-          One paper live on arXiv. Rest unpublished — links go live on release.
+          Two papers live on arXiv. Rest unpublished — links go live on release.
         </motion.p>
 
         <div className="mt-10 flex flex-col">
@@ -61,15 +74,20 @@ export default function CurrentWork() {
               </div>
               <div className="flex flex-col gap-3">
                 <p className="text-[16px] leading-relaxed text-muted">{p.body}</p>
-                {p.href ? (
-                  <a
-                    href={p.href}
-                    target="_blank"
-                    rel="noopener"
-                    className="font-mono text-[12px] font-bold uppercase tracking-wide text-accent underline underline-offset-4"
-                  >
-                    Read on arXiv
-                  </a>
+                {p.links ? (
+                  <div className="flex flex-wrap gap-x-4 gap-y-1">
+                    {p.links.map((l) => (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        target="_blank"
+                        rel="noopener"
+                        className="font-mono text-[12px] font-bold uppercase tracking-wide text-accent underline underline-offset-4"
+                      >
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
                 ) : (
                   <span className="font-mono text-[12px] font-bold uppercase tracking-wide text-accent">
                     In progress

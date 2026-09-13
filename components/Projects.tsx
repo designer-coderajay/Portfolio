@@ -16,7 +16,7 @@ const projects = [
   {
     title: "Glassbox AI",
     tag: "Feb 2026 – Mar 2026",
-    body: "An open-source mechanistic interpretability toolkit that finds the causal circuit behind a transformer prediction and turns it into EU AI Act Annex IV documentation automatically. 1,000+ PyPI downloads a month, live HuggingFace demo, CI passing on 9 architecture families.",
+    body: "An open-source mechanistic interpretability toolkit that finds the causal circuit behind a transformer prediction and turns it into EU AI Act Annex IV documentation automatically. 4,400+ PyPI downloads to date, live HuggingFace demo, CI passing on 9 architecture families.",
     href: "https://github.com/designer-coderajay/glassbox-mech"
   },
   {
@@ -35,7 +35,7 @@ const projects = [
     title: "Causally-Grounded Mechanistic Interpretability",
     tag: "M.Sc. Thesis · Dec 2025 – May 2026",
     body: "Evaluates a model circuit the same way you'd evaluate an explanation: does removing it break the output (sufficiency), and does keeping everything else still break it (comprehensiveness)? On GPT-2's IOI task the discovered circuit beat an attention-only baseline on 75% of prompts, scored 100% sufficiency, but only 22% comprehensiveness. Sufficiency alone oversells how reliable an explanation is.",
-    href: "https://github.com/designer-coderajay/Causally-Grounded-Mechanistic-Interpretability"
+    href: "https://github.com/designer-coderajay/Causally-Grounded-Mechanistic-Interpretability-for-LLMs-with-Faithful-Natural-Language-Explanations"
   },
   {
     title: "Enterprise Agentic AI Platform",
