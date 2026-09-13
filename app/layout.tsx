@@ -33,7 +33,7 @@ const themeInitScript = `
 `;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://designer-coderajay.github.io"),
+  metadataBase: new URL("https://ajaymahale.online"),
   title: "Ajay Pravin Mahale | AI Researcher & Engineer",
   description:
     "Ajay Pravin Mahale. AI researcher and engineer, founder of Glassbox AI. Mechanistic interpretability, LLM safety and evaluation, Azure ML and MLOps. Trier, Germany.",

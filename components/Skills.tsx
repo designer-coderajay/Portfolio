@@ -63,7 +63,7 @@ const groups = [
   },
   {
     label: "Languages",
-    tags: ["English (C1)", "German (B1)", "Hindi (Native)", "French (Beginner)"]
+    tags: ["English (C1)", "German (B1)", "Marathi (Native)"]
   }
 ];
 

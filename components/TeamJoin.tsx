@@ -15,13 +15,14 @@ export default function TeamJoin() {
         <div>
           <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-faint">About</span>
           <p className="mt-6 text-[17px] leading-relaxed text-muted">
-            M.Sc candidate in AI/ML (Hochschule Trier, defending 2026), researching mechanistic interpretability
-            and LLM faithfulness evaluation. I build evaluation tooling that turns interpretability findings
-            into audit-ready evidence, not slide-deck claims.
+            M.Sc. in Interdisciplinary Engineering, AI/ML (Hochschule Trier), researching mechanistic
+            interpretability and LLM faithfulness evaluation. I build evaluation tooling that turns
+            interpretability findings into audit-ready evidence, not slide-deck claims.
           </p>
           <p className="mt-6 text-[17px] leading-relaxed text-muted">
-            Trier, Germany. Open to full-time ML engineer / AI safety roles and PhD positions, available from
-            June 2026, open to relocate, no sponsorship required.
+            Trier, Germany. Available full-time now. German residence permit, no sponsorship required &mdash; open
+            to relocation within Germany and the DACH region. Open to full-time ML engineer, AI safety and
+            governance, and PhD positions.
           </p>
 
           <div className="mt-10 border-t border-line pt-8">
@@ -33,7 +34,7 @@ export default function TeamJoin() {
               </div>
               <div>
                 <p className="text-[15px] font-semibold text-ink">B.Tech, Automotive Engineering</p>
-                <p className="text-[13.5px] text-faint">Government College of Engineering and Research · 2018&ndash;2021 · Grade 1.8</p>
+                <p className="text-[13.5px] text-faint">Government College of Engineering and Research · 2018&ndash;2021 · Grade 8.77/10, Top 5%</p>
               </div>
             </div>
           </div>
@@ -41,9 +42,10 @@ export default function TeamJoin() {
           <div className="mt-10 border-t border-line pt-8">
             <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-faint">Certifications</span>
             <ul className="mt-4 flex flex-col gap-2 text-[14.5px] text-muted">
-              <li>Microsoft Certified: Azure AI Engineer Associate, Azure AI Fundamentals</li>
-              <li>BlueDot Impact, Technical AI Safety fellowship</li>
-              <li>Google, AI Essentials, UX Research</li>
+              <li>Microsoft Certified: Azure AI Engineer Associate (AI-102), Azure AI Fundamentals (AI-900)</li>
+              <li>Anthropic, Claude Code in Action</li>
+              <li>BlueDot Impact, Technical AI Safety (30-hour cohort)</li>
+              <li>Google, AI Essentials</li>
             </ul>
           </div>
         </div>
