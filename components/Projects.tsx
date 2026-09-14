@@ -20,6 +20,12 @@ const projects = [
     href: "https://github.com/designer-coderajay/glassbox-mech"
   },
   {
+    title: "BFSI Credit Intelligence",
+    tag: "May 2026",
+    body: "Agentic loan-underwriting platform for Indian BFSI: six LangGraph agents (document validation, financial analysis, XGBoost + SHAP credit scoring, Isolation Forest fraud detection, RBI/DPDP compliance, final decision) fan out in parallel behind five MCP servers, with every decision explained by SHAP and published to Kafka for audit. Turns a 3-5 day manual process into a sub-5-second, regulator-ready decision.",
+    href: "https://github.com/designer-coderajay/bfsi-credit-intelligence"
+  },
+  {
     title: "Azure ML Pipeline",
     tag: "Feb 2026 – Jun 2026",
     body: "End-to-end MLOps pipeline on Azure ML SDK v2 for heart disease prediction: a four-stage pipeline (data prep, training, evaluation, registration) running on auto-scaling compute clusters, MLflow tracking every run, and automatic promotion to a managed REST endpoint once a model clears the accuracy threshold.",
