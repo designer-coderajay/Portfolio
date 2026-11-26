@@ -19,9 +19,9 @@ export default function Approach() {
         <p className="max-w-[56ch] text-[17px] leading-relaxed text-muted sm:text-[19px]">
           Glassbox AI finds the causal circuit behind a transformer prediction with activation patching, scores
           it for sufficiency and comprehensiveness, and writes EU AI Act Annex IV documentation as structured,
-          content-hashed JSON, about 1.8s per analysis on GPT-2 Small (Apple M2 Pro), 15&ndash;37&times; faster
-          than ACDC depending on circuit size. 943 tests passing in CI across 9 architecture families, GPT-2
-          through Llama-3.
+          content-hashed JSON, about 1.8s per analysis on GPT-2 Small (Apple M1 Pro), 15&ndash;37&times; faster
+          than ACDC depending on circuit size. 1,716 tests passing with 81.3% line coverage in a documented
+          local run (v4.8.0, November 2026).
         </p>
       </motion.div>
     </section>
