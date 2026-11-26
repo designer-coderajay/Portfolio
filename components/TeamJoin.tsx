@@ -15,7 +15,7 @@ export default function TeamJoin() {
         <div>
           <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-faint">About</span>
           <p className="mt-6 text-[17px] leading-relaxed text-muted">
-            M.Sc. in Interdisciplinary Engineering, AI/ML (Hochschule Trier), researching mechanistic
+            M.Sc. in Interdisciplinary Engineering (Hochschule Trier), researching mechanistic
             interpretability and LLM faithfulness evaluation. I build evaluation tooling that turns
             interpretability findings into audit-ready evidence, not slide-deck claims.
           </p>
@@ -29,12 +29,16 @@ export default function TeamJoin() {
             <span className="font-mono text-[12px] uppercase tracking-[0.2em] text-faint">Education</span>
             <div className="mt-4 flex flex-col gap-4">
               <div>
-                <p className="text-[15px] font-semibold text-ink">M.Sc. Interdisciplinary Engineering &mdash; AI &amp; ML</p>
-                <p className="text-[13.5px] text-faint">Hochschule Trier · 2023&ndash;2026 · Grade 1.8, Thesis 1.0</p>
+                <p className="text-[15px] font-semibold text-ink">M.Sc. Interdisciplinary Engineering</p>
+                <p className="text-[13.5px] text-faint">Hochschule Trier · 2023&ndash;2026 · Grade 1.8, Thesis 1.0, Top 2%</p>
               </div>
               <div>
-                <p className="text-[15px] font-semibold text-ink">B.Tech, Automotive Engineering</p>
-                <p className="text-[13.5px] text-faint">Government College of Engineering and Research · 2018&ndash;2021 · Grade 8.77/10, Top 5%</p>
+                <p className="text-[15px] font-semibold text-ink">B.E., Automotive Engineering</p>
+                <p className="text-[13.5px] text-faint">Government College of Engineering and Research · 2018&ndash;2021 · Grade 7.95/10, Top 3%</p>
+              </div>
+              <div>
+                <p className="text-[15px] font-semibold text-ink">Diploma, Mechanical Engineering</p>
+                <p className="text-[13.5px] text-faint">Sandip Polytechnic, Nashik · 2015&ndash;2018 · Grade 87.65/100, Top 1%</p>
               </div>
             </div>
           </div>

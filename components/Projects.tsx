@@ -15,8 +15,8 @@ const item = {
 const projects = [
   {
     title: "Glassbox AI",
-    tag: "Feb 2026 – Mar 2026",
-    body: "An open-source mechanistic interpretability toolkit that finds the causal circuit behind a transformer prediction and turns it into EU AI Act Annex IV documentation automatically. 4,400+ PyPI downloads to date, live HuggingFace demo, CI passing on 9 architecture families.",
+    tag: "Feb 2026 – present",
+    body: "An open-source mechanistic interpretability toolkit that finds the causal circuit behind a transformer prediction and turns it into EU AI Act Annex IV documentation automatically. ~22K PyPI downloads to date (ClickPy, Nov 2026), live HuggingFace demo, 1,716 tests passing at 81.3% line coverage (v4.8.0).",
     href: "https://github.com/designer-coderajay/glassbox-mech"
   },
   {

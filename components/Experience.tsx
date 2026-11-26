@@ -14,13 +14,19 @@ const item = {
 
 const roles = [
   {
+    role: "Project Lead (Selected)",
+    org: "AI Safety Camp, 12th edition · Remote",
+    dates: "Jan 2027 – Apr 2027",
+    body: "Selected through an open call to lead project 25, \u201cWhen Does AI Safety Evidence Survive Independent Analysis?\u201d, a team study measuring how often an interpretability finding changes when different defensible analysis choices are made. Starts January 2027."
+  },
+  {
     role: "Creator & Maintainer",
     org: "Glassbox AI, Trier",
     dates: "Feb 2026 – Present",
-    body: "Built and maintain glassbox-mech-interp (PyPI, MIT core): causal circuit discovery via activation patching, with an ACDC path for exact edge-level discovery, extended to Llama-3, Mistral, Gemma and Phi-3 through a dedicated GQA/RMSNorm architecture adapter. Automates EU AI Act Annex IV documentation generation from circuit analysis into structured JSON. Shipped with a CLI, automated test suite, GitHub Actions CI, and a live Hugging Face demo — 15–37x faster than ACDC on GPT-2 Small (single-run, Apple M2 Pro)."
+    body: "Built and maintain glassbox-mech-interp (PyPI, MIT core): causal circuit discovery via activation patching, with an ACDC path for exact edge-level discovery, extended to Llama-3, Mistral, Gemma and Phi-3 through a dedicated GQA/RMSNorm architecture adapter. Automates EU AI Act Annex IV documentation generation from circuit analysis into structured JSON. Shipped with a CLI, GitHub Actions CI, and a live Hugging Face demo — 15–37x faster than ACDC on GPT-2 Small (single-run, Apple M1 Pro). v4.8.0 records 1,716 passing tests and 81.3% line coverage in a documented local run (Nov 2026)."
   },
   {
-    role: "Machine Learning Engineer",
+    role: "Machine Learning Engineer (M.Sc. Thesis Collaboration)",
     org: "BaseMotion AI, Berlin",
     dates: "Nov 2025 – Apr 2026",
     body: "Applied mechanistic circuit analysis (activation patching, ablation) to GPT-2 Small, scoring explanations against ERASER sufficiency/comprehensiveness metrics. Built the pipeline in PyTorch and TransformerLens with an automated test suite and CI for reproducible runs. Result: r = 0.009 between model confidence and explanation faithfulness: confidence carries no signal. Separately measured that fluent LLM-written explanations score 99% on perceived quality (ERASER), up from 60%, with no corresponding gain in mechanistic faithfulness."
@@ -32,7 +38,7 @@ const roles = [
     body: "Synthesized 25+ papers across AI alignment, scalable oversight, and interpretability into structured technical reports, benchmarking robustness methodologies and cataloguing frontier LLM failure modes to establish baseline quantitative metrics for the field."
   },
   {
-    role: "AI Engineer",
+    role: "AI Trainee Engineer",
     org: "ICEICO Technologies, Nagpur",
     dates: "Feb 2021 – Mar 2023",
     body: "Built PyTorch training pipelines and tuned hyperparameters for internal prediction models, establishing reproducible baselines for testing. Shipped a Retrieval-Augmented Generation pipeline with LangChain to automate knowledge retrieval across production datasets."
